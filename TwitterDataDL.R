@@ -1,6 +1,7 @@
 
 install.packages("twitteR")
 library("twitteR")
+library(lubridate)
 # Help on API & Tokens: https://dev.twitter.com/oauth/overview/application-owner-access-tokens
 # To register your own API go to https://apps.twitter.com
 # and get the access and consumer token/secret (you will need a Twitter Account to do this).
@@ -20,40 +21,24 @@ longLat <- '53.483959, -2.244644,1mi'
 hashtags <- c("#MeToo", "#metoo")
 needle <- paste(hashtags, collapse = " OR ")
 
-tweets10 <- searchTwitter(needle, n = 25000, since = "2017-10-9", until = "2017-10-10")
-tweets11 <- searchTwitter(needle, n = 25000, since = "2017-10-10", until = "2017-10-13")
-tweets14 <- searchTwitter(needle, n = 25000, since = "2017-10-13", until = "2017-10-14")
-tweets15 <- searchTwitter(needle, n = 5000, since = "2017-10-14", until = "2017-10-15" )
-tweets16_1 <- searchTwitter(needle, n = 25000, since = "2017-10-15", until = "2017-10-16" )
-tweets17 <- searchTwitter(needle, n = 5000, since = "2017-10-16", until = "2017-10-17" )
-tweets18 <- searchTwitter(needle, n = 5000, since = "2017-10-17", until = "2017-10-18" )
-tweets19 <- searchTwitter(needle, n = 5000, since = "2017-10-18", until = "2017-10-19" )
-tweets20 <- searchTwitter(needle, n = 15000, since = "2017-10-19", until = "2017-10-20" )
+n1 <- 25000
+# xdate <- ymd(xdate) + 1:5
+# xdate <- "2017-10-11"
+# xdate <- "2017-10-13"
+# xdate <- "2017-10-14"
+# xdate <- "2017-10-15"
+# xdate <- "2017-10-16"
+# xdate <- "2017-10-17"
+# xdate <- "2017-10-18"
+# xdate <- "2017-10-19"
+# xdate <- "2017-10-20"
+# xdate <- "2017-10-21"
+xdate <- "2017-10-22"
+tweets <- searchTwitter(needle, n = n1, since = xdate, until = as.character(ymd(xdate) + 1), lang = "en")
+tweets <- twListToDF(tweets)
 
-tweets2 <- searchTwitter(needle, n = 5000, since = "2017-10-20", until = "2017-10-21" )
 
-tweets14 <- twListToDF(tweets14)
-tweets15 <- twListToDF(tweets15)
-tweets16 <- twListToDF(tweets16)
-tweets16_1 <- twListToDF(tweets16_1)
-
-tweets17 <- twListToDF(tweets17)
-tweets18 <- twListToDF(tweets18)
-tweets19 <- twListToDF(tweets19)
-tweets20 <- twListToDF(tweets20)
-
-getwd()
+file_name <- paste("tweets", as.character(day(ymd(xdate))),"-",as.character(day(ymd(xdate) + 1)),as.character( month(ymd(xdate), label = TRUE, abbr = TRUE)),".rds")
 setwd("/Users/azadeh/Documents/-MeToo")
-saveRDS(tweets14,"tweets13-14Oct.rds")
-saveRDS(tweets15,"tweets14-15Oct.rds")
-saveRDS(tweets16,"tweets15-16Oct.rds")
-saveRDS(tweets16_1,"tweets15-16Oct.rds")
-saveRDS(tweets17,"tweets16-17Oct.rds")
-
-saveRDS(tweets18,"tweets17-18Oct.rds")
-saveRDS(tweets19,"tweets18-19Oct.rds")
-
-saveRDS(tweets20,"tweets19-20Oct.rds")
-
-
-names(tweets)
+saveRDS(tweets, file_name)
+rm(tweets)
