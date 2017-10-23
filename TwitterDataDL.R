@@ -2,6 +2,7 @@
 install.packages("twitteR")
 library("twitteR")
 library(lubridate)
+library(readr)
 # Help on API & Tokens: https://dev.twitter.com/oauth/overview/application-owner-access-tokens
 # To register your own API go to https://apps.twitter.com
 # and get the access and consumer token/secret (you will need a Twitter Account to do this).
@@ -33,7 +34,7 @@ n1 <- 25000
 # xdate <- "2017-10-19"
 # xdate <- "2017-10-20"
 # xdate <- "2017-10-21"
-xdate <- "2017-10-22"
+# xdate <- "2017-10-22"
 tweets <- searchTwitter(needle, n = n1, since = xdate, until = as.character(ymd(xdate) + 1), lang = "en")
 tweets <- twListToDF(tweets)
 
@@ -42,3 +43,4 @@ file_name <- paste("tweets", as.character(day(ymd(xdate))),"-",as.character(day(
 setwd("/Users/azadeh/Documents/-MeToo")
 saveRDS(tweets, file_name)
 rm(tweets)
+

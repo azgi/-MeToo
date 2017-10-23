@@ -1,0 +1,6 @@
+library(dplyr)
+source("combineDailyData.R")
+metoodata <- tbl_df(metoodata)
+head(metoodata)
+names(metoodata)
+n_withGeo <-sum(!is.na(metoodata$longitude))
