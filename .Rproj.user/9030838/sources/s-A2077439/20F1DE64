@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1510156529009.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "20F1DE64",
+    "lastKnownWriteTime" : 0,
+    "last_content_update" : 1510156529009,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "EE31CB60",
+        "caption" : "twtTokens",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=twtTokens&cache_key=EE31CB60",
+        "displayedObservations" : "110910",
+        "environment" : "",
+        "object" : "twtTokens",
+        "preview" : "0",
+        "totalObservations" : "110910",
+        "variables" : "4"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

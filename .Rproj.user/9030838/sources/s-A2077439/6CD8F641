@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1510152180628.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6CD8F641",
+    "lastKnownWriteTime" : 1510159858,
+    "last_content_update" : 1510159858197,
+    "path" : "~/Documents/-MeToo/ExploreMeTooData.R",
+    "project_path" : "ExploreMeTooData.R",
+    "properties" : {
+        "cursorPosition" : "70,0",
+        "scrollLine" : "52"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
